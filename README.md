@@ -2,7 +2,7 @@
 
 A full-stack property listing and booking platform built with the MERN-style stack — **MongoDB, Express, EJS, Node.js** — where users can list, browse, and book properties.
 
-🚀 Deployed Link - https://staysphere-ruuv.onrender.com
+🚀 Deployed Link - https://staysphere-ruuv.onrender.com/listings
 
 ## ✨ Features
 
