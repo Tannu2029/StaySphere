@@ -10,7 +10,7 @@ A full-stack property listing and booking platform built with the MERN-style sta
 - ✅ Server-side data validation using Joi
 - 💬 Flash messages for user feedback (success/error notifications)
 - 🗂️ Session management with MongoDB-backed sessions (connect-mongo)
-- 🤖 AI-assisted features (integrated via OpenAI / Google Gemini APIs)
+- 🤖 AI-assisted features (integrated via Google Gemini APIs)
 
 ## 🛠️ Tech Stack
 
