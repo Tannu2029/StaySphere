@@ -16,6 +16,21 @@ async function main() {
   await mongoose.connect(dbUrl);
 }
 
+const initDB = async () => {
+  await Listing.deleteMany({});
+  
+  const ownerId = new mongoose.Types.ObjectId("6a7847a0027ecc3439c329cc");
+
+  initdata.data = initdata.data.map((obj) => ({
+    ...obj,
+    owner: ownerId, 
+  }));
+
+  await Listing.insertMany(initdata.data);
+  console.log("Data is initialised in Atlas DB!");
+  mongoose.connection.close();
+};
+
 main()
   .then(() => {
     console.log("Connected to Atlas DB!");
@@ -24,13 +39,3 @@ main()
   .catch((err) => {
     console.log("DB Connection Error:", err);
   });
-
-const initDB = async () => {
-  await Listing.deleteMany({});
-  initdata.data = initdata.data.map((obj) => ({
-    ...obj,
-    owner: "6a7847a0027ecc3439c329cc", 
-  }));
-  await Listing.insertMany(initdata.data);
-  console.log("Data is initialised in Atlas DB!");
-};
