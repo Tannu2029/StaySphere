@@ -158,16 +158,18 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1.5rem;
   width: 100%;
 }
 
-
 #filters {
-  display: flex;
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: center;
   overflow-x: auto;
   gap: 2rem;
   flex-grow: 1;
-  min-width: 0;
+  min-width: 0; 
 }
 
 #filters::-webkit-scrollbar {
@@ -182,7 +184,7 @@ body {
   text-align: center;
   opacity: 0.7;
   cursor: pointer;
-  flex-shrink: 0;
+  flex-shrink: 0 !important;
 }
 
 .filter:hover {
@@ -201,10 +203,16 @@ body {
   flex-shrink: 0;
 }
 
-/*Tax Toggle Style */
 .tax-toggle {
   height: 3.25rem;
+  border: 1px solid #b0b0b0 !important;
+  border-radius: 1rem;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
   flex-shrink: 0 !important;
+  white-space: nowrap;
+  background-color: #ffffff;
 }
 
 .tax-toggle:hover {
