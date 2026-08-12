@@ -1,123 +1,106 @@
-🏡 StaySphere
-StaySphere is a full-stack web application inspired by Airbnb that allows users to explore, create, and review property listings across various destinations. Built with Node.js, Express, MongoDB, and EJS, it features user authentication, authorization, and cloud image storage.
+# STAYSPHERE 🏡
 
+A full-stack property listing and booking platform built with the MERN-style stack — **MongoDB, Express, EJS, Node.js** — where users can list, browse, and book properties.
 
-✨ Features
-=> 🏠 Property Listings: Browse listings, view detailed information (pricing, description, location), create new listings, and update or delete existing ones.
+## ✨ Features
 
-=> 🔐 User Authentication & Authorization: Secure user registration, login, and logout powered by Passport.js. Only listing owners can edit/delete their properties.
+- 🏠 Create, view, edit, and delete property listings
+- 🔐 User authentication and authorization (Passport.js — sign up, log in, log out)
+- 📸 Image upload and storage via Cloudinary
+- ✅ Server-side data validation using Joi
+- 💬 Flash messages for user feedback (success/error notifications)
+- 🗂️ Session management with MongoDB-backed sessions (connect-mongo)
+- 🤖 AI-assisted features (integrated via OpenAI / Google Gemini APIs)
 
-=> ⭐ Reviews & Ratings: Logged-in users can leave ratings and comments on properties. Review owners can delete their own reviews.
+## 🛠️ Tech Stack
 
-=> 🖼️ Cloud Image Uploads: Image upload and management integrated with Cloudinary via Multer.
+**Backend:** Node.js, Express.js  
+**Database:** MongoDB, Mongoose  
+**Templating:** EJS, EJS-Mate  
+**Authentication:** Passport.js, Passport-Local, Passport-Local-Mongoose  
+**File Uploads:** Multer, Cloudinary, Multer-Storage-Cloudinary  
+**Validation:** Joi  
+**AI Integration:** OpenAI SDK, Google GenAI SDK  
+**Session/Flash:** express-session, connect-mongo, connect-flash, cookie-parser
 
-=> 💬 Flash Notifications: Real-time feedback alerts for actions like successful login, listing creation, or errors.
+## StaySphere/
 
-=> 📱 Responsive Design: Styled using Bootstrap 5 for clean mobile and desktop layouts.
+├── controllers/ # Route logic / business logic
+├── init/ # Database seeding / initialization
+├── models/ # Mongoose schemas
+├── public/ # Static assets (CSS, JS, images)
+├── routes/ # Express route definitions
+├── utils/ # Helper utilities
+├── views/ # EJS templates
+├── app.js # Main application entry point
+├── cloudConfig.js # Cloudinary configuration
+├── middleware.js # Custom middleware
+├── schema.js # Joi validation schemas
+└── package.json
 
+## 🚀 Getting Started
 
-🛠️ Tech Stack
+### Prerequisites
 
-1. Backend
-=> Node.js & Express.js — Server environment & RESTful routing
+- Node.js (v24.16.0 or compatible)
+- MongoDB (local instance or Atlas cluster)
+- Cloudinary account (for image storage)
 
-=> MongoDB Atlas with Mongoose — NoSQL database & object modeling
+### Installation
 
-=> Passport.js (passport-local, passport-local-mongoose) — Authentication logic
-
-=> express-session + connect-mongo — Session management and persistent storage
-
-3. Frontend
-=> EJS & ejs-mate — Server-side templating engine and layout management
-
-=> Bootstrap 5 & Custom CSS — Responsive layout and custom styling
-
-=> Vanilla JavaScript — Form validation and dynamic UI updates
-
-5. Storage & Deployment
-=> Multer + Cloudinary — Image parsing and cloud media hosting
-
-=> Render — Live web application deployment
-
-
-📂 Project Structure
-
-StaySphere/
-├── controllers/          # Route controller functions (listings, reviews, users)
-├── models/               # Mongoose schemas (Listing, User, Review)
-├── routes/               # Express routing endpoints
-├── views/                # EJS UI templates
-│   ├── layouts/          # Boilerplate layout structure (boilerplate.ejs)
-│   ├── includes/         # Reusable partials (navbar, footer, flash alerts)
-│   ├── listings/         # Listing views (index, show, new, edit)
-│   └── users/            # Auth views (login, signup)
-├── public/               # Client-side static assets (CSS, JS)
-├── utils/                # Helper functions (wrapAsync, expressError)
-├── middleware.js         # Authentication, ownership & Joi validation middleware
-├── schema.js             # Joi validation schemas
-├── app.js                # Express app entry point
-└── init/                 # Database initialization scripts and sample data
-
-
-⚙️ Installation & Setup
-Prerequisites
-=> Node.js (v18+)
-=> MongoDB Atlas account (or local MongoDB instance)
-=> Cloudinary account
-=> Google Gemini API key
-
-
-Steps
-1. Clone the repository:
-
-=> Bash
-      git clone https://github.com/Tannu2029/StaySphere.git
-      cd StaySphere
+1. Clone the repository
+```bash
+   git clone https://github.com/Tannu2029/StaySphere.git
+   cd StaySphere
+```
 
 2. Install dependencies
-bash
+```bash
    npm install
+```
 
-3. Set up environment variables Create a .env file in the root directory:
-env
-   ATLASDB_URL=your_mongodb_atlas_connection_string
+3. Create a `.env` file in the root directory and add the following:
+```env
+   ATLASDB_URL=your_mongodb_connection_string
    CLOUD_NAME=your_cloudinary_cloud_name
    CLOUD_API_KEY=your_cloudinary_api_key
    CLOUD_API_SECRET=your_cloudinary_api_secret
-   GEMINI_API_KEY=your_gemini_api_key
+   SECRET=your_session_secret
+   OPENAI_API_KEY=your_openai_api_key
+   GEMINI_API_KEY=your_google_genai_api_key
+```
 
-4. Seed the database (optional)
-bash
-   node init/index.js
+4. Start the application
+```bash
+   node app.js
+```
 
-5. Run the app
-bash
-   node app.js or nodemon app.js
+5. Open your browser and visit: http://localhost:8080/
 
-6. Visit http://localhost:8080 in your browser 🎉
+## 📝 Usage
 
+- Sign up for a new account or log in
+- Browse existing property listings
+- Create a new listing with images, price, location, and description
+- Edit or delete your own listings
+- Leave reviews on listings
 
-🔒 Security Notes
+## 🤝 Contributing
 
-=> .env is excluded via .gitignore — never commit real credentials
-=> Passwords are hashed and salted via passport-local-mongoose
-=> Session data is stored securely in MongoDB via connect-mongo
+Contributions are welcome! Feel free to fork this repo, open issues, and submit pull requests.
 
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-🚀 Deployment
+## 📄 License
 
-This project is deployed on Render, connected directly to this GitHub repository for continuous deployment. 
-Environment variables are configured in the Render dashboard to match the .env structure above.
+This project is licensed under the ISC License.
 
+## 👤 Author
 
-🤝 Contributing
-Contributions are welcome! Feel free to fork this repo, open issues, or submit pull requests.
-
-
-📄 License
-This project is open source and available for educational purposes.
-
-
-👤 Author
-Tannu Sagar
-GitHub: @Tannu2029
+**Tannu2029**  
+GitHub: [@Tannu2029]
+(https://github.com/Tannu2029)
