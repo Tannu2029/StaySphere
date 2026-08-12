@@ -1,10 +1,8 @@
 <% layout("/layouts/boilerplate") %>
 
-<!-- Filters Bar & Tax Toggle Wrapper -->
-<div class="filter-container d-flex align-items-center justify-content-between my-3">
+<div class="filters-wrapper d-flex align-items-center justify-content-between my-3">
     
-    <!-- Left: Scrollable Filters -->
-    <div id="filters" class="d-flex align-items-center me-3">
+    <div id="filters">
         <a href="/listings?category=Trending" class="filter-link">
             <div class="filter">
                 <div><i class="fa-solid fa-fire"></i></div>
@@ -76,16 +74,16 @@
         </a>
     </div>
 
-    <!-- Right: Fixed Tax Toggle Button -->
-    <div class="tax-toggle border rounded-pill p-3 d-flex align-items-center">
+    <div class="tax-toggle border border-secondary-subtle rounded-pill px-3 py-2 ms-3 d-flex align-items-center">
         <div class="form-check form-switch form-check-reverse m-0">
             <input
                 class="form-check-input"
                 type="checkbox"
                 role="switch"
                 id="flexSwitchCheckDefault"
+                style="cursor: pointer;"
             />
-            <label class="form-check-label text-nowrap ms-2" for="flexSwitchCheckDefault">
+            <label class="form-check-label text-nowrap fw-medium ms-2" for="flexSwitchCheckDefault" style="cursor: pointer;">
                 Display total after taxes
             </label>
         </div>

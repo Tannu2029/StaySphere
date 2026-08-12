@@ -154,24 +154,20 @@ body {
 
 /*Icons*/
 
-
 .filters-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1.5rem;
   width: 100%;
 }
 
 
 #filters {
-  display: flex !important;
-  flex-wrap: nowrap !important;
-  align-items: center;
+  display: flex;
   overflow-x: auto;
-  gap: 1.5rem;
+  gap: 2rem;
   flex-grow: 1;
-  min-width: 0; 
+  min-width: 0;
 }
 
 #filters::-webkit-scrollbar {
@@ -186,7 +182,7 @@ body {
   text-align: center;
   opacity: 0.7;
   cursor: pointer;
-  flex-shrink: 0 !important;
+  flex-shrink: 0;
 }
 
 .filter:hover {
@@ -205,20 +201,14 @@ body {
   flex-shrink: 0;
 }
 
-/* Tax Toggle Styling */
+/*Tax Toggle Style */
 .tax-toggle {
-  border: 1px solid #b0b0b0;
-  border-radius: 1rem;
   height: 3.25rem;
-  padding: 0 1rem;
-  display: flex;
-  align-items: center;
-  flex-shrink: 0 !important; 
-  white-space: nowrap; 
+  flex-shrink: 0 !important;
 }
 
 .tax-toggle:hover {
-  border-color: #000000;
+  border-color: #000000 !important;
   cursor: pointer;
 }
 
