@@ -21,7 +21,6 @@ const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
 const Listing = require("./models/listing.js");
 
-// Google Gen AI Setup
 const { GoogleGenAI } = require("@google/genai");
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
@@ -67,7 +66,6 @@ store.on("error", (err) => {
   console.log("ERROR in MONGO SESSION STORE", err);
 });
 
-// Session Configuration
 const sessionOptions = {
     store,
     secret: process.env.SECRET,
@@ -83,7 +81,6 @@ const sessionOptions = {
 app.use(session(sessionOptions));
 app.use(flash());
 
-// Passport Initialization
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
@@ -91,7 +88,7 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-// Flash & Current User Locals Middleware
+
 app.use((req, res, next) => {
   res.locals.success = req.flash("success");
   res.locals.error = req.flash("error");
@@ -99,28 +96,33 @@ app.use((req, res, next) => {
   next();
 });
 
-// --- Gemini AI Assistant Route ---
-app.post("/geminiai", async (req, res) => {
+const handleChat = async (req, res) => {
   try {
     const { message } = req.body;
 
-    // Fetch top listings from database for context
+    if (!message) {
+      return res.status(400).json({ reply: "Please provide a message." });
+    }
+
     const listings = await Listing.find({}).limit(10);
     const context = listings
       .map((l) => `${l.title} in ${l.location}, ${l.country} for ₹${l.price}/night`)
       .join("; ");
 
     const response = await ai.models.generateContent({
-      model: "gemini-2.0-flash",
+      model: "gemini-2.5-flash", 
       contents: `You are StaySphere's travel assistant. Current available listings: ${context}. Answer this user query concisely and helpfully: "${message}"`,
     });
 
     res.json({ reply: response.text });
   } catch (err) {
-    console.error("Gemini Error:", err);
+    console.error("Gemini AI Route Error:", err);
     res.status(500).json({ reply: "Sorry, I am having trouble fetching recommendations right now." });
   }
-});
+};
+
+app.post("/chat", handleChat);
+app.post("/geminiai", handleChat);
 
 app.get("/", (req, res) => {
   res.redirect("/listings");

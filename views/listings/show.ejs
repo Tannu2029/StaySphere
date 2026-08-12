@@ -23,7 +23,7 @@
 </div>
 
 <!-- Edit & Delete Buttons -->
-<% if(currUser && listing.owner._id.equals(currUser._id)) { %>
+<% if(currUser && listing.owner && listing.owner._id.equals(currUser._id)) { %>
 <div class="btns offset-3 col-6 ps-0 mb-3">
     <a href="/listings/<%= listing._id %>/edit" class="btn btn-dark edit-btn">Edit</a>
     <form method="POST" action="/listings/<%= listing._id %>?_method=DELETE" class="d-inline ms-2">
