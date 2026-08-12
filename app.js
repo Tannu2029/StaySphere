@@ -122,6 +122,10 @@ app.post("/geminiai", async (req, res) => {
   }
 });
 
+app.get("/", (req, res) => {
+  res.redirect("/listings");
+});
+
 // Routes Setup
 app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
