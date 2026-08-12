@@ -23,20 +23,23 @@ A full-stack property listing and booking platform built with the MERN-style sta
 **AI Integration:** OpenAI SDK, Google GenAI SDK  
 **Session/Flash:** express-session, connect-mongo, connect-flash, cookie-parser
 
-## StaySphere/
+## 📁 Project Structure
 
-├── controllers/ # Route logic / business logic
-├── init/ # Database seeding / initialization
-├── models/ # Mongoose schemas
-├── public/ # Static assets (CSS, JS, images)
-├── routes/ # Express route definitions
-├── utils/ # Helper utilities
-├── views/ # EJS templates
-├── app.js # Main application entry point
-├── cloudConfig.js # Cloudinary configuration
-├── middleware.js # Custom middleware
-├── schema.js # Joi validation schemas
+```
+StaySphere/
+├── controllers/      # Route logic / business logic
+├── init/             # Database seeding / initialization
+├── models/           # Mongoose schemas
+├── public/           # Static assets (CSS, JS, images)
+├── routes/           # Express route definitions
+├── utils/            # Helper utilities
+├── views/            # EJS templates
+├── app.js            # Main application entry point
+├── cloudConfig.js    # Cloudinary configuration
+├── middleware.js     # Custom middleware
+├── schema.js         # Joi validation schemas
 └── package.json
+```
 
 ## 🚀 Getting Started
 
