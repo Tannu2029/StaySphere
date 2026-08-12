@@ -4,10 +4,15 @@ StaySphere is a full-stack web application inspired by Airbnb that allows users 
 
 ✨ Features
 => 🏠 Property Listings: Browse listings, view detailed information (pricing, description, location), create new listings, and update or delete existing ones.
+
 => 🔐 User Authentication & Authorization: Secure user registration, login, and logout powered by Passport.js. Only listing owners can edit/delete their properties.
+
 => ⭐ Reviews & Ratings: Logged-in users can leave ratings and comments on properties. Review owners can delete their own reviews.
+
 => 🖼️ Cloud Image Uploads: Image upload and management integrated with Cloudinary via Multer.
+
 => 💬 Flash Notifications: Real-time feedback alerts for actions like successful login, listing creation, or errors.
+
 => 📱 Responsive Design: Styled using Bootstrap 5 for clean mobile and desktop layouts.
 
 
@@ -15,17 +20,23 @@ StaySphere is a full-stack web application inspired by Airbnb that allows users 
 
 1. Backend
 => Node.js & Express.js — Server environment & RESTful routing
+
 => MongoDB Atlas with Mongoose — NoSQL database & object modeling
+
 => Passport.js (passport-local, passport-local-mongoose) — Authentication logic
+
 => express-session + connect-mongo — Session management and persistent storage
 
-2. Frontend
+3. Frontend
 => EJS & ejs-mate — Server-side templating engine and layout management
+
 => Bootstrap 5 & Custom CSS — Responsive layout and custom styling
+
 => Vanilla JavaScript — Form validation and dynamic UI updates
 
-3. Storage & Deployment
+5. Storage & Deployment
 => Multer + Cloudinary — Image parsing and cloud media hosting
+
 => Render — Live web application deployment
 
 
