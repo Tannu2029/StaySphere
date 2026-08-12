@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Listing = require("./models/listing");
 const Review = require("./models/review");
-const ExpressError = require("./utils/expressError.js");
+const ExpressError = require("./utils/ExpressError.js");
 const { listingSchema, reviewSchema } = require("./schema.js");
 
 module.exports.isLoggedIn = (req, res, next) => {
