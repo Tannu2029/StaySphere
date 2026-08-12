@@ -154,68 +154,71 @@ body {
 
 /*Icons*/
 
-#filters {
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    align-items: center;
-    overflow-x: auto;
-    gap: 2rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    width: 100%;
+
+.filters-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  width: 100%;
 }
 
+
+#filters {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: center;
+  overflow-x: auto;
+  gap: 1.5rem;
+  flex-grow: 1;
+  min-width: 0; 
+}
 
 #filters::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 #filters {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .filter {
-    text-align: center;
-    margin-right: 2rem;
-    margin-top: 1rem;
-    opacity: 0.7;
-    cursor: pointer;
-    flex-shrink: 0 !important; 
+  text-align: center;
+  opacity: 0.7;
+  cursor: pointer;
+  flex-shrink: 0 !important;
 }
 
 .filter:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
 .filter p {
-    font-size: 0.8rem;
-    margin: 0;
+  font-size: 0.8rem;
+  margin: 0;
+  white-space: nowrap;
 }
 
 .filter-link {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
+  flex-shrink: 0;
 }
 
-/* Tax Toggle Container Styling */
+/* Tax Toggle Styling */
 .tax-toggle {
   border: 1px solid #b0b0b0;
   border-radius: 1rem;
   height: 3.25rem;
-  padding: 1rem;
-  margin-left: auto;
+  padding: 0 1rem;
   display: flex;
   align-items: center;
+  flex-shrink: 0 !important; 
+  white-space: nowrap; 
 }
 
 .tax-toggle:hover {
   border-color: #000000;
-  cursor: pointer;
-}
-
-.form-switch .form-check-input {
-  width: 2.5em !important;
-  height: 1.25em !important;
   cursor: pointer;
 }
 
